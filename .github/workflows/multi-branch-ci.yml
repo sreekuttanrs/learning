@@ -1,0 +1,27 @@
+name: Multi-Branch CI
+
+on:
+  push:
+    branches:
+      - "main"     # Trigger this workflow on pushes to the main branch
+      - "feacture" # Trigger this workflow on pushes to the feacture branch
+  pull_request:
+    branches:
+      - "main"     # Trigger this workflow on PRs targeting the main branch
+      - "feacture" # Trigger this workflow on PRs targeting the feacture branch
+  workflow_dispatch:  # Allow the workflow to be manually triggered
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run a one-line script
+        run: echo "Hello, world! Running on either main or feacture branch."
+
+      - name: Run a multi-line script
+        run: |
+          echo "Add other actions to build,"
+          echo "test, and deploy your project."
