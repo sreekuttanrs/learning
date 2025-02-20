@@ -1,0 +1,43 @@
+installation steps
+------------------
+git clone https://github.com/27px/Remote-File-Manager.git
+cd Remote-File-Manager/
+
+ # move to main folder
+ ------------------------------
+ 
+  cd main
+  # install dependencies of angular
+  npm install
+-----------------------------------
+
+  cd server
+  # install node dependencies
+  npm install
+  
+  
+  build command
+  -------------
+npm run electron-generate-linux         # for linux 64bit
+
+
+Run in development mode 
+--------------------------
+
+
+ cd main
+  npm run start 
+  
+  app up in--http://localhost:4200/
+
+  
+  Run in production mode (In browser)
+---------------------------------
+
+   cd main
+  npm run prod
+  # open http://localhost:4500/ in browser
+
+
+------------------------------------------------
+

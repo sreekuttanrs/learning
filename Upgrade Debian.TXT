@@ -1,0 +1,57 @@
+Upgrade Debian 9 to 10
+===============================
+apt-get update
+echo "deb http://deb.debian.org/debian/ buster main
+deb http://deb.debian.org/debian/ buster-updates main
+deb http://security.debian.org/debian-security buster/updates main" > /etc/apt/sources.list
+apt-get update --fix-missing
+apt-get upgrade
+apt-get dist-upgrade
+/etc/os-release 
+===========================================================================
+
+Upgrade Debian 10 to 11
+======================
+
+apt-get update
+apt-get update --fix-missing 
+echo "deb http://deb.debian.org/debian/ bullseye main
+deb http://deb.debian.org/debian/ bullseye-updates main" > /etc/apt/sources.list
+sudo apt-get upgrade
+apt-get dist-upgrade
+cat /etc/os-release 
+===============================================================================
+
+
+Debian 11 to 12
+------------------
+echo "deb http://deb.debian.org/debian/ bookworm main
+deb http://deb.debian.org/debian/ bookworm-updates main" > /etc/apt/sources.list
+apt update
+apt upgrade 
+apt upgrade --fix-missing
+apt upgrade
+cat /etc/os-release 
+====================================================
+
+==================================================
+usermod -s /bin/bash www-data
+chmod 700 /var/www/.ssh
+chmod 600 /var/www/.ssh/authorized_keys
+====================================================
+edited the /etc/ssh/sshd_config
+
+made change in 
+===========
+Port 22
+PermitRootLogin yes
+PubkeyAuthentication yes
+AuthorizedKeysFile      .ssh/authorized_keys .ssh/authorized_keys2
+AllowUsers root www-data
+===================================================================
+
+
+systemctl restart sshd
+
+
+
